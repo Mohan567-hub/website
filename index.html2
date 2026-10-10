@@ -1,0 +1,79 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Counter</title>
+  <style>
+    body {
+      min-height: 100vh;
+      margin: 0;
+      display: grid;
+      place-items: center;
+      font: 18px system-ui, sans-serif;
+      background: #f2f5fa;
+      color: #182033;
+    }
+
+    main {
+      padding: 2rem;
+      text-align: center;
+      background: white;
+      border-radius: 1rem;
+      box-shadow: 0 1rem 3rem #15213a18;
+    }
+
+    #count {
+      margin: 1rem 0;
+      font-size: 4rem;
+      font-weight: 700;
+    }
+
+    button {
+      margin: 0.25rem;
+      padding: 0.7rem 1rem;
+      border: 0;
+      border-radius: 0.5rem;
+      background: #4d61d5;
+      color: white;
+      font: inherit;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Counter</h1>
+    <div id="count" aria-live="polite">0</div>
+    <button id="minus">− Decrease</button>
+    <button id="reset">Reset</button>
+    <button id="plus">+ Increase</button>
+  </main>
+
+  <script>
+    let count = 0;
+    const display = document.querySelector("#count");
+
+    function updateCount() {
+      display.textContent = count;
+    }
+
+    document.querySelector("#minus").addEventListener("click", () => {
+      count--;
+      updateCount();
+    });
+
+    document.querySelector("#reset").addEventListener("click", () => {
+      count = 0;
+      updateCount();
+    });
+
+    document.querySelector("#plus").addEventListener("click", () => {
+      count++;
+      updateCount();
+    });
+  </script>
+</body>
+</html>
+```
